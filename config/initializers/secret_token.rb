@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Marketplace::Application.config.secret_key_base = 'b634755d0b9a81dcec1afc390ad47bb284d2109541ebcd654b6f91ff87ce45d4e88c4b8ef60d877592ef66bcb457e51b017b3185943719c67b73b806d4d34079'
+Marketplace::Application.config.secret_key_base = '6ceb70b00ea9deba65c72f331805c47dc77885ef197f287fa7bb42f1695d5c84f32deba60a46624d83ac197f6bb5da8ba8bdf3fbc35bde1ca59dea797947a878'
