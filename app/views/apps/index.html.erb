@@ -1,39 +1,27 @@
-<h1>Listing apps</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Publisher</th>
-      <th>Version</th>
-      <th>Size</th>
-      <th>Price</th>
-      <th>image</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="apps-container">
+  <ul>
     <% @apps.each do |app| %>
-      <tr>
-        <td><%= app.name %></td>
-        <td><%= app.description %></td>
-        <td><%= app.publisher %></td>
-        <td><%= app.version %></td>
-        <td><%= app.size %></td>
-        <td><%= app.price %></td>
-        <td><%= image_tag app.image.url(:small) %></td>
-        <td><%= link_to 'Show', app %></td>
-        <td><%= link_to 'Edit', edit_app_path(app) %></td>
-        <td><%= link_to 'Destroy', app, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <li>
+        <article class="app" id="app-<%=app.id%>">
+          <%= image_tag app.image.url(:small) %>
+          <section class="details">
+            <h1><%= app.name %></h1>
+            <%= app.rating %>
+            <%= app.price %>
+          </section>
+          <section class="actions">
+            <%= link_to '+ info',
+            app, 
+            :class => "button info",
+            :remote => "true" %>
+            <%= link_to 'download', app, 
+              :class => "button download",
+              :url => {:action => :download},
+              :remote => "true" %>
+          </section>
+        </article>
+      </li>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New App', new_app_path %>
+  </ul>
+  <div class="extended-info"></div>
+</div>

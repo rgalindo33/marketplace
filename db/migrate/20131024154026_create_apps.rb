@@ -6,7 +6,7 @@ class CreateApps < ActiveRecord::Migration
       t.string :publisher
       t.string :version
       t.string :size
-      t.integer :price
+      t.string :price
 
       t.timestamps
     end

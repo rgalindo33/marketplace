@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131024160732) do
+ActiveRecord::Schema.define(version: 20131025145449) do
 
   create_table "apps", force: true do |t|
     t.string   "name"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20131024160732) do
     t.string   "publisher"
     t.string   "version"
     t.string   "size"
-    t.integer  "price"
+    t.string   "price"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"
@@ -28,9 +28,21 @@ ActiveRecord::Schema.define(version: 20131024160732) do
     t.datetime "image_updated_at"
   end
 
+  create_table "downloads", force: true do |t|
+    t.integer  "app_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "downloads", ["app_id"], name: "index_downloads_on_app_id"
+  add_index "downloads", ["user_id"], name: "index_downloads_on_user_id"
+
   create_table "ratings", force: true do |t|
-    t.integer  "points"
+    t.integer  "value"
+    t.string   "commenter"
     t.string   "comment"
+    t.integer  "app_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

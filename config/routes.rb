@@ -1,7 +1,10 @@
 Marketplace::Application.routes.draw do
+  
   resources :ratings
 
-  resources :apps
+  resources :apps do
+    resources :ratings
+  end
 
   resources :users
 

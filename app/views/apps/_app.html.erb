@@ -1,0 +1,50 @@
+<%= image_tag @app.image.url %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @app.name %>
+</p>
+<p>
+  <strong>Rating:</strong>
+  <%= @app.rating %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @app.description %>
+</p>
+
+<p>
+  <strong>Publisher:</strong>
+  <%= @app.publisher %>
+</p>
+
+<p>
+  <strong>Version:</strong>
+  <%= @app.version %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @app.size %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @app.price %>
+</p>
+
+<h2>Ratings</h2>
+<% @app.ratings.each do |rating| %>
+  <p>
+      <%= rating.value %>
+  </p>
+  <p>
+    <strong>By:</strong>
+    <%= rating.commenter %>
+  </p>
+ 
+  <p>
+    <strong>Comment:</strong>
+    <%= rating.comment %>
+  </p>
+<% end %>
