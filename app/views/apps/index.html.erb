@@ -2,24 +2,7 @@
   <ul>
     <% @apps.each do |app| %>
       <li>
-        <article class="app" id="app-<%=app.id%>">
-          <%= image_tag app.image.url(:small) %>
-          <section class="details">
-            <h1><%= app.name %></h1>
-            <%= app.rating %>
-            <%= app.price %>
-          </section>
-          <section class="actions">
-            <%= link_to '+ info',
-            app, 
-            :class => "button info",
-            :remote => "true" %>
-            <%= link_to 'download', app, 
-              :class => "button download",
-              :url => {:action => :download},
-              :remote => "true" %>
-          </section>
-        </article>
+        <%= render app %>
       </li>
     <% end %>
   </ul>

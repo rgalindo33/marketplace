@@ -1,1 +1,13 @@
-<%#= link_to "Marketplace", root_path, :class => 'brand' %>
+<h1><%= link_to "TBox Marketplace", apps_path %></h1>
+
+
+<ul>
+  <li>All Apps</li>
+  <li>Installed Apps</li>
+  <li>
+    <%= form_tag("/search", method: "get") do %>
+      <%= text_field_tag(:q,"",:placeholder =>"searchs", :type=>"search") %>
+    <% end %>
+  </li>
+</ul>
+

@@ -8,12 +8,49 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require 'reset'
  *= require_self
  *= require_tree .
 */
 
-@import "reset";
 
+
+
+body 
+{
+ font-family: Verdana, Arial, sans-serif;
+ line-height:1.5;
+ font-size:14px;
+ color: #333;
+}
+
+h1, h2, h3, h4, h5, h6{ 
+  font-weight: normal;
+}
+
+
+a {
+  color: #2A6496;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
 .main{
-  margin: 10px
+  margin: 10px;
+}
+
+.main-nav{
+  border-bottom: 1px solid #E5E5E5;
+  font-size: 20px;
+  text-align: center;
+  h1 {
+    font-size: 36px;
+    color: #333;
+  }
+  ul>li {
+    display: inline-block;
+    font-size: 16px;
+    margin: 15px;
+  }
 }

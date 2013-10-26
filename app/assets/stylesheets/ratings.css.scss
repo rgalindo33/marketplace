@@ -1,3 +1,44 @@
 // Place all the styles related to the Ratings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.rating-points {
+  background: url(ratings-sprite.png) no-repeat;
+  height: 13px;
+  width: 86px;
+
+  &.rated-0_0 {
+    background-position: -85px -13px;
+  }
+  &.rated-0_5 {
+    background-position: -85px -38px;
+  }
+  &.rated-1_0 {
+    background-position: -68px -13px;
+  }
+  &.rated-1_5 {
+    background-position: -68px -38px;
+  }
+  &.rated-2_0 {
+    background-position: -51px -13px;
+  }
+  &.rated-2_5 {
+    background-position: -51px -38px;
+  }
+  &.rated-3_0 {
+    background-position: -34px -13px;
+  }
+  &.rated-3_5 {
+    background-position: -34px -38px;
+  }
+  &.rated-4_0 {
+    background-position: -17px -13px;
+  }
+  &.rated-4_5 {
+    background-position: -17px -38px;
+  }
+  &.rated-5_0 {
+    background-position: 0 -13px;
+  }
+
+}

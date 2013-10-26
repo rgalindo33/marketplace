@@ -63,10 +63,12 @@ class AppsController < ApplicationController
 
   def download
     @user = User.first
+    @app = App.find_by(id: params[:id])
     @user.apps << @app
     respond_to do |format|
       format.html { redirect_to apps_url }
       format.json { head :no_content }
+      format.js {}
     end
     
   end

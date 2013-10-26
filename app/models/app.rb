@@ -8,4 +8,8 @@ class App < ActiveRecord::Base
   def rating
     ratings.average("value").to_f
   end
+
+  def downloaded? user
+    self.in?(user.apps)
+  end
 end

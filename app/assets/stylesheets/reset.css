@@ -63,8 +63,3 @@ a img { border: none; }
 
 /* Remember to define your own focus styles! */
 :focus { outline: 0; }
-
-/* Remove ul list items*/
-ul{
-  list-style: none;
-}

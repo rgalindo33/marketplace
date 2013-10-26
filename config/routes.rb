@@ -4,6 +4,9 @@ Marketplace::Application.routes.draw do
 
   resources :apps do
     resources :ratings
+    # Route
+    get 'download', :on => :member
+
   end
 
   resources :users
