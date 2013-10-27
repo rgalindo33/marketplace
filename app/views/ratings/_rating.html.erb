@@ -1,0 +1,10 @@
+<aside class="rating">
+  <div class="rating-points rated-<%= roundAndPrepareRating(value) %>" data-rating="<%= value %>">
+  </div>
+
+  <% if !local_assigns[:full_info].nil? %>
+    <p class="faded less-important"><%= value %> out of 5</p>
+    <p class="faded"><%= app.ratings.size rescue ""%> reviews</p>
+  <% end %>
+  
+</aside>

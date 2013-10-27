@@ -2,11 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+$site-max-width: 800px;
+$site-min-width: 460px;
 
 .apps-container {
   margin: 0px auto;
-  max-width: 800px;
+  max-width: $site-max-width;
+  min-width: $site-min-width;
   position: relative;
 
   >ul li {
@@ -15,6 +17,13 @@
   }
 
   article.app {
+    h1 {
+      font-size: 13px;
+      margin: 0;
+      overflow: hidden;
+      white-space: nowrap; /* Don't forget this one */
+      text-overflow: ellipsis;
+    }
     &:hover {
       .actions {
         transition: opacity 0.21s linear 0s;
@@ -78,13 +87,30 @@
     }
   }
   .extended-info {
-    position: absolute;
-    top:0;
     margin: 0 auto;
     display: none;
     height: 400px;
     width: 300px;
     background-color: white;
     padding:10px;
+  }
+  article.app-extended {
+    section.summary {
+      width: 250px;
+      margin-right:50px;
+      .details{
+        margin:25px 0;
+        p {
+          margin: 10px 0;
+        }
+      }
+    }
+    section.description {
+      max-width: 500px;
+    }
+  }
+
+  .column {
+    float:left;
   }
 }

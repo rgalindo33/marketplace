@@ -2,14 +2,13 @@
   <%= image_tag app.image.url(:small) %>
   <section class="details">
     <h1><%= app.name %></h1>
-    <%= render partial: "rating", locals: {app: app}  %>
+    <%= render partial: "ratings/rating", locals: {value: app.rating}  %>
     <%= app.price %>
   </section>
   <section class="actions">
     <%= link_to '+ info',
       app, 
-      :class => "button info",
-      :remote => "true" 
+      :class => "button info"
     %>
     <% if app.downloaded? current_user %>
       <%= render :partial => 'downloaded_button' %>

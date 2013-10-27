@@ -1,0 +1,17 @@
+<% app.ratings.each do |rating| %>
+  
+  <article class="cf">
+    <header class="column">
+      <%= render partial: "ratings/rating", locals: {value: rating.value}  %>
+      <p class="less-important">
+        By
+        <%= rating.commenter %>
+      </p>
+    </header>
+   
+    <p class="column comments">
+      <%= rating.comment %>
+    </p>
+  </article>
+
+<% end %>

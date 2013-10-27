@@ -1,50 +1,40 @@
-<%= image_tag @app.image.url %>
+<article class="app-extended cf">
+  <h1><%= @app.name %></h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @app.name %>
-</p>
-<p>
-  <strong>Rating:</strong>
-  <%= @app.rating %>
-</p>
-<p>
-  <strong>Description:</strong>
-  <%= @app.description %>
-</p>
+  <section class="summary column">
+    <%= image_tag @app.image.url %>
+    <%= render partial: "ratings/rating", locals: {full_info: true, app: @app, value: @app.rating}  %>
+    <div class="details">
+      <p>
+        <span class="faded">Price:</span>
+        <%= @app.price %>
+      </p>
+      <p>
+        <span class="faded">Publisher:</span>
+        <%= @app.publisher %>
+      </p>
+      <p>
+        <span class="faded">Version:</span>
+        <%= @app.version %>
+      </p>
 
-<p>
-  <strong>Publisher:</strong>
-  <%= @app.publisher %>
-</p>
+      <p>
+        <span class="faded">Size:</span>
+        <%= @app.size %>
+      </p>
+    </div>
 
-<p>
-  <strong>Version:</strong>
-  <%= @app.version %>
-</p>
+  </section>
 
-<p>
-  <strong>Size:</strong>
-  <%= @app.size %>
-</p>
+  <section class="description column">
+    <p>
+      <%= @app.description %>
+    </p>
+    <section class="ratings">
+      <h1>Reviews</h1>
+      <%= render partial: "ratings/ratings_list", locals: {app: @app} %>
+    </section>
 
-<p>
-  <strong>Price:</strong>
-  <%= @app.price %>
-</p>
+  </section>
 
-<h2>Ratings</h2>
-<% @app.ratings.each do |rating| %>
-  <p>
-      <%= rating.value %>
-  </p>
-  <p>
-    <strong>By:</strong>
-    <%= rating.commenter %>
-  </p>
- 
-  <p>
-    <strong>Comment:</strong>
-    <%= rating.comment %>
-  </p>
-<% end %>
+</article>

@@ -6,7 +6,7 @@ class App < ActiveRecord::Base
   has_attached_file :image, :styles => { :small => "150x150>" }
 
   def rating
-    ratings.average("value").to_f
+    ratings.average("value").to_f.round(2)
   end
 
   def downloaded? user

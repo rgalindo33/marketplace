@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.rating{
+  text-align: right;
+}
 .rating-points {
   background: url(ratings-sprite.png) no-repeat;
   height: 13px;
@@ -41,4 +44,29 @@
     background-position: 0 -13px;
   }
 
+}
+.show .rating-points {
+  display: inline-block;
+}
+.ratings {
+  margin-top:25px;
+  h1 {
+    font-size: 20px;
+  }
+  article {
+    margin:25px 0;
+    header {
+      width: 85px;
+      .rating {
+        display: inline-block;
+        p {
+          display: inline-block;
+        }
+      }
+    }
+    .comments {
+      width: 400px;
+      margin-left: 15px;
+    }
+  }
 }

@@ -151,7 +151,7 @@ apps.each do |app|
   app.image = File.open("#{Rails.root}/seed_images/#{app.name.downcase.tr(' ', '_' )}.jpg") rescue nil
  
 
-  5.times do
+  rand(1..10).times do
     Rating.create([{
       app_id: "#{app.id}",
       value: "#{rand(1..5)}",
