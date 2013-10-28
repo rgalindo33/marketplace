@@ -3,7 +3,7 @@ class CreateRatings < ActiveRecord::Migration
     create_table :ratings do |t|
       t.integer :value
       t.string :commenter
-      t.string :comment
+      t.text :comment
       t.belongs_to :app
 
       t.timestamps

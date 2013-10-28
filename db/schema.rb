@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20131025145449) do
 
   create_table "apps", force: true do |t|
     t.string   "name"
-    t.string   "description"
+    t.text     "description"
     t.string   "publisher"
     t.string   "version"
     t.string   "size"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20131025145449) do
   create_table "ratings", force: true do |t|
     t.integer  "value"
     t.string   "commenter"
-    t.string   "comment"
+    t.text     "comment"
     t.integer  "app_id"
     t.datetime "created_at"
     t.datetime "updated_at"

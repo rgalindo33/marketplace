@@ -1,6 +1,3 @@
-App.all.each do |app|
-  app.destroy
-end
 
 users = User.create([{name: 'raul'},{name: 'pau'}])
 
@@ -144,13 +141,37 @@ TripAdvisor is free and easy to use",
     version:"2.5.4.3",
     size:"2 MB",
     price:"Free"
+  },
+  {
+    name:"Clear List Pro",
+    description:"This is the most SIMPLE and BEAUTIFUL way to manage lists of activities or items. Track things you have to do every day, things you want to do, movies to see, and even share lists between phones!",
+    publisher:"Bernardo Zamora",
+    version:"1.3.0.0",
+    size:"1 MB",
+    price:"0.99$"
+  },
+  {
+    name:"Shazam",
+    description:"Shazam recognizes music and media playing around you. Tap the Shazam button to instantly tag, and then explore, buy and share. Tagging is unlimited, so use Shazam as much as you want.",
+    publisher:"Shazam Entertainment Ltd",
+    version:"3.6.0.0",
+    size:"4 MB",
+    price:"Free"
+  },
+  {
+    name:"Clear List Pro",
+    description:"This is the most SIMPLE and BEAUTIFUL way to manage lists of activities or items. Track things you have to do every day, things you want to do, movies to see, and even share lists between phones!",
+    publisher:"Bernardo Zamora",
+    version:"1.3.0.0",
+    size:"1 MB",
+    price:"0.99$"
   }
+
 ])
 
 apps.each do |app|
   app.image = File.open("#{Rails.root}/seed_images/#{app.name.downcase.tr(' ', '_' )}.jpg") rescue nil
  
-
   rand(1..10).times do
     Rating.create([{
       app_id: "#{app.id}",
@@ -159,7 +180,7 @@ apps.each do |app|
       comment: "#{Faker::Lorem.paragraph}"
       }])
   end
-
    app.save
+
 end
 
