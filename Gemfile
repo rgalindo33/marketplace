@@ -6,6 +6,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'turbolinks_transitions'
 gem 'jbuilder', '~> 1.2'
 gem 'figaro'
 gem "paperclip", "~> 3.0"
@@ -28,7 +29,9 @@ group :development, :test do
   gem 'sqlite3'
   gem 'factory_girl_rails'
   gem 'rspec-rails'
-  gem "pry"
+  gem 'pry-rails'
+  gem 'pry-debugger'
+  gem 'pry-coolline'
 end
 group :test do
   gem 'database_cleaner', '1.0.1'

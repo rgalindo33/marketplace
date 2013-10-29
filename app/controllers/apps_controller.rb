@@ -66,7 +66,7 @@ class AppsController < ApplicationController
     current_user.apps << @app
     respond_to do |format|
       format.html { redirect_to apps_url }
-      format.js {}
+      format.js
     end
     
   end
