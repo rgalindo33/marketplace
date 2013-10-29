@@ -11,16 +11,18 @@
     <%= yield(:head) %>
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
+    <div id="wrap">
+      <nav class="main-nav">
+        <%= render 'layouts/navigation' %>
+      </nav>
 
-    <nav class="main-nav">
-      <%= render 'layouts/navigation' %>
-    </nav>
-
-    <section class="main" id="content">    
-      <%= yield %>
-    </section>
+      <section class="main" id="content">    
+        <%= yield %>
+      </section>
+    </div>
 
     <footer>
+      <%= render 'layouts/footer' %>
     </footer>
 
   </body>

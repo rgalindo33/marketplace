@@ -1,16 +1,14 @@
 Marketplace::Application.routes.draw do
+
+  root to: "apps#index"
+
+  resources :apps, only:[:index,:show] do
+    
+    member do
+      get 'install'
+      get 'uninstall'
+    end  
+    get 'installed', on: :collection
   
-  resources :ratings
-
-  resources :apps do
-    resources :ratings
-    # Route
-    get 'install', :on => :member
-    get 'uninstall', :on => :member
-    get 'installed', :on => :collection
-
   end
-
-  resources :users
-
 end

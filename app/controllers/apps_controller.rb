@@ -5,13 +5,19 @@ class AppsController < ApplicationController
     @apps = App.all.order("RANDOM()")
   end
 
+  # 
+  # list all installed apps
+  # 
   def installed
     @apps = current_user.apps
     render 'index'
   end
 
-  # def show
-  # end
+  # 
+  # show specific app
+  # 
+  def show
+  end
 
   # 
   # Performs an app installation on the current user
@@ -38,7 +44,9 @@ class AppsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    # 
+    # get our app
+    # 
     def set_app
       @app = App.find(params[:id])
     end

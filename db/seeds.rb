@@ -1,5 +1,5 @@
 
-users = User.create([{name: 'raul'},{name: 'pau'}])
+users = User.create([{name: 'guest'}])
 
 apps = App.create([
   {
