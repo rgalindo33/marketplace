@@ -1,0 +1,9 @@
+<% if params[:action] != "installed" %>
+  <span class='button installed'> Installed </span>
+<% else %>
+  <%= link_to 'uninstall',
+    {:action => :uninstall, :id => app.id},
+    :class => "button uninstall",
+    :remote => "true" 
+  %>
+<% end %>

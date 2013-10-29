@@ -18,7 +18,8 @@ $site-min-width: 460px;
 
   article.app {
     h1 {
-      font-size: 13px;
+      font-size: 14px;
+      font-family: Verdana, Arial, sans-serif;
       margin: 0;
       overflow: hidden;
       white-space: nowrap; /* Don't forget this one */
@@ -60,21 +61,24 @@ $site-min-width: 460px;
         &:hover {
           background-color: black;
         }
-        &.download {
+        &.install {
           background-color: #428BCA;
           border-color: #357EBD;
+          background-position: 0px 0px;
           &:hover {
             background-color: #136FAF;
           }
         }
-        &.downloaded {
-          background-color: #5CB85C;
+        &.installed {
+          background-color: #47A447;
           border-color: #4CAE4C;
-          &:hover {
-            background-color: #47A447;
-          }
         }
-        &.info {
+        &.uninstall {
+          background-color: #D9534F;
+          border-color: #D43F3A;
+          &:hover{
+            background-color: #D2322D;
+          }
         }
         &.selected {
           background-color: #EA7B34;
@@ -82,7 +86,13 @@ $site-min-width: 460px;
             background-color: #C7692C;
           }
         }
-        
+        &.loading:before{
+          display: inline-block;
+          content: "";
+          height: 10px;
+          width: 22px;
+          background:url(ajax-bar.gif) no-repeat;
+        }
       }
     }
   }
@@ -99,9 +109,12 @@ $site-min-width: 460px;
       width: 250px;
       margin-right:50px;
       .details{
-        margin:25px 0;
+        margin:0 0 30px;
         p {
-          margin: 10px 0;
+          margin: 16px 0;
+          span {
+            display: block;
+          }
         }
       }
     }

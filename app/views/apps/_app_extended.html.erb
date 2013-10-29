@@ -6,20 +6,20 @@
     <%= render partial: "ratings/rating", locals: {full_info: true, app: @app, value: @app.rating}  %>
     <div class="details">
       <p>
-        <span class="faded">Price:</span>
+        <span class="faded less-important">Price</span>
         <%= @app.price %>
       </p>
       <p>
-        <span class="faded">Publisher:</span>
+        <span class="faded less-important">Publisher</span>
         <%= @app.publisher %>
       </p>
       <p>
-        <span class="faded">Version:</span>
+        <span class="faded less-important">Version</span>
         <%= @app.version %>
       </p>
 
       <p>
-        <span class="faded">Size:</span>
+        <span class="faded less-important">Size</span>
         <%= @app.size %>
       </p>
     </div>

@@ -159,12 +159,12 @@ TripAdvisor is free and easy to use",
     price:"Free"
   },
   {
-    name:"Clear List Pro",
-    description:"This is the most SIMPLE and BEAUTIFUL way to manage lists of activities or items. Track things you have to do every day, things you want to do, movies to see, and even share lists between phones!",
-    publisher:"Bernardo Zamora",
-    version:"1.3.0.0",
-    size:"1 MB",
-    price:"0.99$"
+    name:"Amazing Weather HD",
+    description:"The fastest most beautiful and informative weather app with dynamic lock screens and mix ",
+    publisher:"EizSoft",
+    version:"4.2.2.2",
+    size:"58 MB",
+    price:"1.99$"
   }
 
 ])

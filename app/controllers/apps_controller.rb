@@ -1,74 +1,40 @@
 class AppsController < ApplicationController
-  before_action :set_app, only: [:show, :edit, :update, :destroy]
+  before_action :set_app, only: [:show, :install, :uninstall]
 
-  # GET /apps
-  # GET /apps.json
   def index
     @apps = App.all.order("RANDOM()")
   end
 
-  # GET /apps/1
-  # GET /apps/1.json
-  def show
+  def installed
+    @apps = current_user.apps
+    render 'index'
   end
 
-  # GET /apps/new
-  def new
-    @app = App.new
-  end
+  # def show
+  # end
 
-  # GET /apps/1/edit
-  def edit
-  end
+  # 
+  # Performs an app installation on the current user
+  # 
+  def install
+    sleep 1 # make it wait a bit 
+    current_user.apps << @app rescue nil
 
-  # POST /apps
-  # POST /apps.json
-  def create
-    @app = App.new(app_params)
-
-    respond_to do |format|
-      if @app.save
-        format.html { redirect_to @app, notice: 'App was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @app }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @app.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /apps/1
-  # PATCH/PUT /apps/1.json
-  def update
-    respond_to do |format|
-      if @app.update(app_params)
-        format.html { redirect_to @app, notice: 'App was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @app.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /apps/1
-  # DELETE /apps/1.json
-  def destroy
-    @app.destroy
-    respond_to do |format|
-      format.html { redirect_to apps_url }
-      format.json { head :no_content }
-    end
-  end
-
-  def download
-    @app = App.find_by(id: params[:id])
-    current_user.apps << @app
     respond_to do |format|
       format.html { redirect_to apps_url }
       format.js
     end
-    
+  end
+
+  # 
+  # Deletes the app from users list
+  # 
+  def uninstall
+    current_user.apps.delete @app
+    respond_to do |format|
+      format.html { redirect_to apps_url }
+      format.js
+    end
   end
 
   private

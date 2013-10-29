@@ -1,6 +1,6 @@
-class CreateDownloads < ActiveRecord::Migration
+class CreateInstalls < ActiveRecord::Migration
   def change
-    create_table :downloads do |t|
+    create_table :installs do |t|
       t.belongs_to :app, index: true
       t.belongs_to :user, index: true
 

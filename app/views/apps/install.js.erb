@@ -1,0 +1,2 @@
+$("#app_<%=@app.id%> .install").remove();
+$("#app_<%=@app.id%> .actions").append("<%= escape_javascript(render :partial => 'installed_button') %>");

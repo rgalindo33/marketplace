@@ -1,8 +1,9 @@
 <div class="apps-container cf">
+  <span class="hidden">You have no Installed apps at the moment</span>
   <ul>
     <% @apps.each do |app| %>
       <li>
-        <%= render app %>
+        <%= render app %> 
       </li>
     <% end %>
   </ul>

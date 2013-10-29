@@ -1,20 +1,23 @@
 class App < ActiveRecord::Base
   has_many :ratings
-  has_many :downloads
-  has_many :users, :through => :downloads
+  has_many :installs
+  has_many :users, :through => :installs
 
   has_attached_file :image, :styles => { :small => "150x150>" }
 
   
-    # 
-    # aksdhadhaskdha
-    # 
-    # @return [float] [description]
+  # 
+  # Calculate the average rating for the app, with 2 decimals
+  # 
   def rating
     ratings.average("value").to_f.round(2)
   end
-
-  def downloaded? user
+  # 
+  # check if the user has the app installed
+  # @param  user  refers to the user to check
+  # 
+  # @return boolean
+  def installed? user
     self.in?(user.apps)
   end
 end

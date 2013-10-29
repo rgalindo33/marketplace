@@ -28,15 +28,15 @@ ActiveRecord::Schema.define(version: 20131025145449) do
     t.datetime "image_updated_at"
   end
 
-  create_table "downloads", force: true do |t|
+  create_table "installs", force: true do |t|
     t.integer  "app_id"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "downloads", ["app_id"], name: "index_downloads_on_app_id"
-  add_index "downloads", ["user_id"], name: "index_downloads_on_user_id"
+  add_index "installs", ["app_id"], name: "index_installs_on_app_id"
+  add_index "installs", ["user_id"], name: "index_installs_on_user_id"
 
   create_table "ratings", force: true do |t|
     t.integer  "value"

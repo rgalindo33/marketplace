@@ -1,8 +1,8 @@
 <div class="container">
   <h1><%= link_to "TBox Marketplace", apps_path %></h1>
   <ul class="cf">
-    <li><%= link_to 'All Apps', apps_path %></li>
-    <li><%= link_to 'Installed Apps', apps_path %></li>
+    <li><%= nav_link 'All Apps', apps_path %></li>
+    <li><%= nav_link 'Installed Apps', installed_apps_path %></li>
     <li class="right">
       <%= form_tag("/search", method: "get") do %>
         <%= text_field_tag(:q,"",:placeholder =>"Search apps", :type=>"search") %>
