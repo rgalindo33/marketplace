@@ -2,10 +2,10 @@ require 'spec_helper'
 
 describe "Apps" do
   let(:test_app) { FactoryGirl.create(:app) }
+  let(:current_user) { FactoryGirl.create(:user) }
   
   describe "GET /apps" do
-    it "works! (now write some real specs)" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
+    it "responds to the index" do
       get apps_path
       response.status.should be(200)
     end
@@ -16,7 +16,25 @@ describe "Apps" do
       response.status.should be(200)
     end
     it "raises an error if app not found" do
-      expect{ get app_path 20 }.to raise_error(ActiveRecord::RecordNotFound)
+      expect{ get app_path 1 }.to raise_error(ActiveRecord::RecordNotFound)
+    end
+  end
+  describe "GET /apps/:id/install" do
+    it "responds to the app install" do
+      get install_app_path test_app.id
+      response.status.should be(200)
+    end
+  end
+  describe "GET /apps/:id/uninstall" do
+    it "responds to the app uninstall" do
+      get uninstall_app_path test_app.id
+      response.status.should be(200)
+    end
+  end
+  describe "GET /apps/installed" do
+    it "responds to the installed apps" do
+      get installed_apps_path
+      response.status.should be(200)
     end
   end
 end

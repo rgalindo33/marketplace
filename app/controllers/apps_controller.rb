@@ -23,8 +23,11 @@ class AppsController < ApplicationController
   # Performs an app installation on the current user
   # 
   def install
+    unless current_user.apps.include? @app
+      current_user.apps << @app
+    end
+
     sleep 1 # make it wait a bit 
-    current_user.apps << @app rescue nil
 
     respond_to do |format|
       format.html { redirect_to apps_url }
@@ -41,6 +44,11 @@ class AppsController < ApplicationController
       format.html { redirect_to apps_url }
       format.js
     end
+  end
+
+  def search
+    @apps = App.search(params[:search])
+    render 'index'
   end
 
   private

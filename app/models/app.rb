@@ -20,4 +20,17 @@ class App < ActiveRecord::Base
   def installed? user
     self.in?(user.apps)
   end
+
+  # 
+  # search method
+  # @param  text to be searched
+  # 
+  # @return array of apps, if it finds none returns all
+  def self.search text
+    if text
+      where('name LIKE ?', "%#{text}%").to_a
+    else
+      find :all
+    end
+  end
 end

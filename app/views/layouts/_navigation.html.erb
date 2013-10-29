@@ -4,8 +4,8 @@
     <li><%= nav_link 'All Apps', apps_path %></li>
     <li><%= nav_link 'Installed Apps', installed_apps_path %></li>
     <li class="right">
-      <%= form_tag("/search", method: "get") do %>
-        <%= text_field_tag(:q,"",:placeholder =>"Search apps", :type=>"search") %>
+      <%= form_tag(search_apps_path, method: "get", remote: true) do %>
+        <%= text_field_tag(:search,"",:placeholder =>"Search apps", :type=>"search") %>
       <% end %>
     </li>
   </ul>

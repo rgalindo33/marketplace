@@ -8,7 +8,11 @@ Marketplace::Application.routes.draw do
       get 'install'
       get 'uninstall'
     end  
-    get 'installed', on: :collection
+    
+    collection do
+      get 'installed'
+      get 'search'
+    end
   
   end
 end
