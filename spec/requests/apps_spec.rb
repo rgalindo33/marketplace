@@ -19,21 +19,10 @@ describe "Apps" do
       expect{ get app_path 1 }.to raise_error(ActiveRecord::RecordNotFound)
     end
   end
-  describe "GET /apps/:id/install" do
-    it "responds to the app install" do
-      get install_app_path test_app.id
-      response.status.should be(200)
-    end
-  end
-  describe "GET /apps/:id/uninstall" do
-    it "responds to the app uninstall" do
-      get uninstall_app_path test_app.id
-      response.status.should be(200)
-    end
-  end
-  describe "GET /apps/installed" do
-    it "responds to the installed apps" do
-      get installed_apps_path
+  
+  describe "GET /apps/search" do
+    it "responds to the search action" do
+      get search_apps_path
       response.status.should be(200)
     end
   end

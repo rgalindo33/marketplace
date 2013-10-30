@@ -12,12 +12,12 @@ body
 
 h1, h2, h3, h4, h5, h6{ 
   font-weight: normal;
+  margin-bottom:15px;
 }
 h1 {
   font-size: 36px;
   font-family: 'Raleway', sans-serif;
   color: #333;
-  margin-bottom:15px;
   a {
     color: #2A6496;
   }
@@ -41,7 +41,8 @@ ul {
   margin: 0 auto;
 }
 .main{
-  margin: 25px 25px 85px;
+  margin: 25px 25px 0px;
+  padding-bottom:85px;
 }
 
 nav.main-nav{
@@ -88,7 +89,9 @@ footer{
 .hidden {
   display: none;
 }
-
+#flash {
+  margin-bottom:15px;
+}
 /*CLEARFIX*/
 .cf:before,
 .cf:after {

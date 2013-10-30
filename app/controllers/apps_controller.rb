@@ -10,6 +10,7 @@ class AppsController < ApplicationController
   # 
   def installed
     @apps = current_user.apps
+    flash.now[:notice] = "No Apps found" if @apps.empty?
     render 'index'
   end
 
@@ -46,9 +47,17 @@ class AppsController < ApplicationController
     end
   end
 
+  # 
+  # perfom a search on all apps
+  # 
   def search
     @apps = App.search(params[:search])
-    render 'index'
+    flash[:notice] = "displaying search results for \"#{params[:search]}\""
+    respond_to do |format|
+      format.html { render 'index' }
+      format.js {}
+    end
+    
   end
 
   private

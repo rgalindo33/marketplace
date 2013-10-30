@@ -1,5 +1,5 @@
 require 'spec_helper'
 
 describe Install do
-  pending "add some examples to (or delete) #{__FILE__}"
+  pending "write the unit tests  #{__FILE__}"
 end

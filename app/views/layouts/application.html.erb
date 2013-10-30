@@ -16,7 +16,13 @@
         <%= render 'layouts/navigation' %>
       </nav>
 
-      <section class="main" id="content">    
+      <section class="main" id="content"> 
+        <aside id="flash" class="faded less-important container">
+          <% flash.each do |key, value| %>
+            <%= content_tag(:p, value, :class => "flash #{key}") %>
+          <% end %>   
+        </aside>
+      
         <%= yield %>
       </section>
     </div>
