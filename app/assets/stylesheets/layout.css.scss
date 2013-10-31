@@ -44,6 +44,7 @@ ul {
 
 nav.main-nav{
 
+  min-width: $site-max-width;
   border-bottom: 1px solid #E5E5E5;
   h1{
     padding-top:20px;
@@ -64,7 +65,7 @@ nav.main-nav{
 }
 
 footer{
-  // min-width: 950px;
+  min-width: 950px;
   background-color: #F1F1F1;
   font-size:10px;
   text-align:right;
