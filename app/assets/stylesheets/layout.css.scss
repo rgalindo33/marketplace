@@ -34,8 +34,7 @@ ul {
 }
 
 .container{
-  max-width: $site-max-width;
-  min-width: $site-min-width;
+  min-width: $site-max-width;
   margin: 0 auto;
 }
 .main{
@@ -44,6 +43,8 @@ ul {
 }
 
 nav.main-nav{
+
+  min-width: $site-max-width;
   border-bottom: 1px solid #E5E5E5;
   h1{
     padding-top:20px;
@@ -62,11 +63,12 @@ nav.main-nav{
     }
   }
 }
+
 footer{
+  min-width: 950px;
   background-color: #F1F1F1;
   font-size:10px;
   text-align:right;
-  width: 100%;
   .container {
     padding:16px 25px 0;
   }

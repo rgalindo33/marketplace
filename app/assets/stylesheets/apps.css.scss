@@ -2,8 +2,7 @@
 
 .apps-container {
   margin: 0px auto;
-  max-width: $site-max-width;
-  min-width: $site-min-width;
+  width: $site-max-width;
   position: relative;
 
   >ul li {
@@ -118,11 +117,12 @@
       }
     }
     section.description {
-      max-width: 600px;
+      width: 595px;
     }
   }
 
   .column {
-    float:left;
+    display: inline-block;
+    vertical-align: top;
   }
 }
