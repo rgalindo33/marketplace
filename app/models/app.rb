@@ -20,7 +20,6 @@ class App < ActiveRecord::Base
   def installed? user
     self.in?(user.apps)
   end
-
   # 
   # search method
   # @param  text to be searched
