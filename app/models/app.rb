@@ -28,7 +28,7 @@ class App < ActiveRecord::Base
   # @return array of apps, if it finds none returns all
   def self.search text
     if text
-      where('name LIKE ?', "%#{text}%").to_a
+      where('name LIKE LOWER(?)', "%#{text.downcase}%").to_a
     else
       find :all
     end
